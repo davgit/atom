@@ -24,6 +24,7 @@ convertFilePath = (filePath) ->
   encodeURI(filePath)
 
 compileCoffeeScript = (coffee, filePath, cachePath) ->
+  console.log 'compiiling', filePath
   {js, v3SourceMap} = CoffeeScript.compile(coffee, filename: filePath, sourceMap: true)
   # Include source map in the web page environment.
   if btoa? and JSON? and unescape? and encodeURIComponent?
